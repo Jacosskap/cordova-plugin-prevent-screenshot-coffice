@@ -17,7 +17,6 @@
     <engines>
         <engine name="cordova" version=">=7.1.0"/>
         <engine name="cordova-android" version=">=7.0.0"/>
-        <engine name="cordova-ios" version=">=4.3.0"/>
     </engines>
 
     <platform name="android">
@@ -28,27 +27,13 @@
             </feature>
         </config-file>
 
-	<config-file target="AndroidManifest.xml" parent="/*">
+        <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
         </config-file>
-            
+
         <source-file src="src/android/com/coffice/ScreenshotBlocker.java" target-dir="src/com/coffice"/>
         <source-file src="src/android/com/coffice/ScreenShotContentObserver.java" target-dir="src/com/coffice"/>
-	    <source-file src="src/android/com/coffice/PermissionHelper.java" target-dir="src/com/coffice"/>
-    </platform>
-
-    <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="screenshotName">
-                <param name="ios-package" value="ScreenshotBlocker"/>
-                <param name="onload" value="true"/>
-            </feature>
-        </config-file>
-
-        <header-file src="src/ios/ScreenshotBlocker.h"/>
-        <source-file src="src/ios/ScreenshotBlocker.m"/>
-        <header-file src="src/ios/ScreenRecordingDetector.h"/>
-        <source-file src="src/ios/ScreenRecordingDetector.m"/>
+        <source-file src="src/android/com/coffice/PermissionHelper.java" target-dir="src/com/coffice"/>
     </platform>
 
 </plugin>
